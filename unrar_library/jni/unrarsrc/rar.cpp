@@ -9,6 +9,7 @@ int __attribute__ ((visibility ("default"))) main(int argc, char *argv[])
 #endif
 
   InitConsole();
+  ErrHandler.Clean();
   ErrHandler.SetSignalHandlers(true);
 
 #ifdef SFX_MODULE
