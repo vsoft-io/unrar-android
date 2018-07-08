@@ -1,7 +1,7 @@
 #include "rar.hpp"
 
 #if !defined(RARDLL)
-int main(int argc, char *argv[])
+int __attribute__ ((visibility ("default"))) main(int argc, char *argv[])
 {
 
 #ifdef _UNIX
@@ -32,9 +32,9 @@ int main(int argc, char *argv[])
   POWER_MODE ShutdownOnClose=POWERMODE_KEEP;
 #endif
 
-  try 
+  try
   {
-  
+
     CommandData *Cmd=new CommandData;
 #ifdef SFX_MODULE
     wcscpy(Cmd->Command,L"X");
